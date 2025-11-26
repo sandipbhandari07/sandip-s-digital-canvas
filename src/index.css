@@ -8,44 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 100% 6%;
-    --foreground: 180 100% 98%;
+    --background: 216 10% 18%;
+    --foreground: 0 0% 98%;
 
-    --card: 210 50% 10%;
-    --card-foreground: 180 100% 98%;
+    --card: 216 10% 20%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 210 50% 8%;
-    --popover-foreground: 180 100% 98%;
+    --popover: 216 10% 16%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 189 94% 43%;
-    --primary-foreground: 210 100% 6%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 216 10% 18%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 180 100% 98%;
+    --secondary: 216 10% 25%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 216 10% 25%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 189 94% 43%;
-    --accent-foreground: 210 100% 6%;
+    --accent: 0 0% 98%;
+    --accent-foreground: 216 10% 18%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 180 100% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 189 94% 43%;
+    --border: 216 10% 30%;
+    --input: 216 10% 25%;
+    --ring: 0 0% 98%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
-    /* Portfolio specific colors */
-    --gradient-start: 210 100% 6%;
-    --gradient-end: 185 60% 15%;
-    --card-glass: 210 50% 10%;
-    --text-dim: 180 20% 70%;
+    /* Blob colors */
+    --blob-dark: 216 15% 22%;
+    --blob-darker: 216 15% 20%;
     
     /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
