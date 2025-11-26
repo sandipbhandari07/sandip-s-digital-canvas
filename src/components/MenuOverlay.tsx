@@ -1,24 +1,26 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface MenuOverlayProps {
   isOpen: boolean;
   onClose: () => void;
-  onNavigate: (section: string) => void;
 }
 
 const menuItems = [
-  { number: "01", label: "HOME", section: "home" },
-  { number: "02", label: "WORK", section: "projects" },
-  { number: "03", label: "ABOUT", section: "about" },
-  { number: "04", label: "CONTACT", section: "contact" },
+  { number: "01", label: "HOME", path: "/" },
+  { number: "02", label: "WORK", path: "/work" },
+  { number: "03", label: "ABOUT", path: "/about" },
+  { number: "04", label: "CONTACT", path: "/contact" },
 ];
 
-const MenuOverlay = ({ isOpen, onClose, onNavigate }: MenuOverlayProps) => {
+const MenuOverlay = ({ isOpen, onClose }: MenuOverlayProps) => {
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
 
-  const handleNavigate = (section: string) => {
-    onNavigate(section);
+  const handleNavigate = (path: string) => {
+    navigate(path);
     onClose();
   };
 
@@ -39,8 +41,8 @@ const MenuOverlay = ({ isOpen, onClose, onNavigate }: MenuOverlayProps) => {
         <nav className="space-y-8">
           {menuItems.map((item, index) => (
             <button
-              key={item.section}
-              onClick={() => handleNavigate(item.section)}
+              key={item.path}
+              onClick={() => handleNavigate(item.path)}
               className="flex items-baseline gap-6 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
