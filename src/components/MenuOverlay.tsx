@@ -9,7 +9,7 @@ interface MenuOverlayProps {
 
 const menuItems = [
   { number: "01", label: "HOME", path: "/" },
-  { number: "02", label: "WORK", path: "/work" },
+  { number: "02", label: "PROJECTS", path: "/work" },
   { number: "03", label: "ABOUT", path: "/about" },
   { number: "04", label: "CONTACT", path: "/contact" },
 ];
