@@ -15,32 +15,32 @@ const Work = () => {
       <Header onMenuOpen={() => setMenuOpen(true)} />
       <MenuOverlay isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
-      <main className="min-h-screen px-8 md:px-16 py-32">
-        <div className="max-w-6xl mx-auto w-full">
-          <div className="space-y-12">
-            {/* Terminal Header */}
-            <div className="animate-fade-in font-mono">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-[hsl(var(--terminal-green))]">$ </span>
-                <span className="text-[hsl(var(--terminal-purple))]">ls</span>
-                <span className="text-foreground"> ~/projects</span>
-              </div>
-              <div className="text-sm text-muted-foreground pl-4">
-                Found {projects.length} projects
-              </div>
+      <main className="h-screen flex items-center px-8 md:px-16 py-32">
+        <div className="w-full h-full max-h-[700px] flex flex-col">
+          {/* Terminal Header */}
+          <div className="animate-fade-in font-mono mb-8 flex-shrink-0">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-[hsl(var(--terminal-green))]">$ </span>
+              <span className="text-[hsl(var(--terminal-purple))]">ls</span>
+              <span className="text-foreground"> ~/projects</span>
             </div>
+            <div className="text-sm text-muted-foreground pl-4">
+              Found {projects.length} projects
+            </div>
+          </div>
 
-            {/* Projects Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
+          {/* Projects Horizontal Scroll */}
+          <div className="flex-1 overflow-x-auto overflow-y-hidden pb-4">
+            <div className="flex gap-6 h-full">
               {projects.map((project, index) => (
                 <button
                   key={project.id}
                   onClick={() => navigate(`/project/${project.id}`)}
-                  className="group relative bg-card border border-border rounded-lg overflow-hidden hover:border-[hsl(var(--terminal-green))] transition-all duration-300 animate-fade-in"
+                  className="group relative bg-card border border-border rounded-lg overflow-hidden hover:border-[hsl(var(--terminal-green))] transition-all duration-300 animate-fade-in flex-shrink-0 w-[350px] h-full flex flex-col"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Project Image */}
-                  <div className="aspect-video overflow-hidden bg-secondary">
+                  <div className="aspect-video overflow-hidden bg-secondary flex-shrink-0">
                     <img
                       src={project.imageUrl}
                       alt={project.title}
@@ -49,7 +49,7 @@ const Work = () => {
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-6 space-y-3">
+                  <div className="p-6 space-y-3 flex-1 flex flex-col">
                     <div className="flex items-start justify-between gap-4">
                       <div className="text-left flex-1">
                         <h3 className="text-xl font-bold mb-1 group-hover:text-[hsl(var(--terminal-green))] transition-colors">
@@ -86,7 +86,7 @@ const Work = () => {
                     </div>
 
                     {/* Hover Arrow */}
-                    <div className="flex items-center gap-2 text-sm text-[hsl(var(--terminal-green))] opacity-0 group-hover:opacity-100 transition-opacity pt-2">
+                    <div className="flex items-center gap-2 text-sm text-[hsl(var(--terminal-green))] opacity-0 group-hover:opacity-100 transition-opacity pt-2 mt-auto">
                       <span>View Project</span>
                       <span>→</span>
                     </div>
