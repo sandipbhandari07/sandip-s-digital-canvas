@@ -3,65 +3,40 @@ import Header from "@/components/Header";
 import MenuOverlay from "@/components/MenuOverlay";
 import BlobBackground from "@/components/BlobBackground";
 import profileImage from "@/assets/profile-hero.jpg";
-import { Github, Linkedin, Mail, MapPin, Play } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Music } from "lucide-react";
 
 const About = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const experiences = [
+  // Add your Spotify playlists here
+  const spotifyPlaylists = [
     {
       id: 1,
-      title: "Android Developer",
-      company: "BlackBoard Nepal Pvt. Ltd.",
-      period: "July 2024 - Present",
-      description: "Flutter app development, Building eCommerce admin app, Integrating RESTful APIs",
-      duration: "6 months",
-      type: "work"
+      name: "Coding Flow",
+      description: "Deep focus music for coding sessions",
+      tracks: 45,
+      coverUrl: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=300&h=300&fit=crop"
     },
     {
       id: 2,
-      title: "Django Developer Intern",
-      company: "Corpola Tech",
-      period: "April 2023 - July 2023",
-      description: "Django app development, Bug fixing and testing, Database schema handling",
-      duration: "3 months",
-      type: "work"
+      name: "Chill Vibes",
+      description: "Relaxing tunes for unwinding",
+      tracks: 32,
+      coverUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop"
     },
     {
       id: 3,
-      title: "IT Engineer",
-      company: "LAFUGO Corporation Japan",
-      period: "Dec 2022 - March 2023",
-      description: "Docker containers, Environment setup, Implemented new features",
-      duration: "4 months",
-      type: "work"
+      name: "Workout Energy",
+      description: "High energy music to pump you up",
+      tracks: 28,
+      coverUrl: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop"
     },
     {
       id: 4,
-      title: "Bachelor in Computer Application",
-      company: "Kathmandu Bernhardt College",
-      period: "2023",
-      description: "Web programming, mobile app development, database management",
-      duration: "4 years",
-      type: "education"
-    },
-    {
-      id: 5,
-      title: "+2 Science",
-      company: "Kathmandu Bernhardt College",
-      period: "2018",
-      description: "Physics, Mathematics, Computer Science",
-      duration: "2 years",
-      type: "education"
-    },
-    {
-      id: 6,
-      title: "SLC",
-      company: "Bright Angels' School",
-      period: "2016",
-      description: "Secondary education with strong academic performance",
-      duration: "10 years",
-      type: "education"
+      name: "Late Night Coding",
+      description: "Perfect for midnight programming",
+      tracks: 38,
+      coverUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=300&h=300&fit=crop"
     }
   ];
 
@@ -191,47 +166,42 @@ const About = () => {
               </div>
             </div>
 
-            {/* Experience Playlist */}
+            {/* Spotify Playlists */}
             <div>
-              <h2 className="text-2xl font-bold mb-4 pb-2 border-b border-border">Experience</h2>
+              <h2 className="text-2xl font-bold mb-4 pb-2 border-b border-border flex items-center gap-2">
+                <Music className="w-6 h-6 text-[hsl(var(--terminal-green))]" />
+                My Playlists
+              </h2>
               
-              <div className="space-y-1">
-                {experiences.map((exp, index) => (
-                  <div 
-                    key={exp.id}
-                    className="group flex items-center gap-4 p-3 rounded hover:bg-secondary/50 transition-colors cursor-pointer"
+              <div className="grid grid-cols-2 gap-4">
+                {spotifyPlaylists.map((playlist, index) => (
+                  <a
+                    key={playlist.id}
+                    href="https://open.spotify.com/user/l74zqsnogdrcza7mxoean84gk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card border border-border rounded-lg overflow-hidden hover:border-[hsl(var(--terminal-green))] transition-all duration-300 animate-fade-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    {/* Track Number */}
-                    <div className="w-8 text-right text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                      {exp.id}
+                    <div className="aspect-square overflow-hidden bg-secondary">
+                      <img 
+                        src={playlist.coverUrl} 
+                        alt={playlist.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
                     </div>
-
-                    {/* Play Button */}
-                    <div className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Play className="w-4 h-4 fill-current" />
+                    <div className="p-4">
+                      <h3 className="font-bold mb-1 group-hover:text-[hsl(var(--terminal-green))] transition-colors">
+                        {playlist.name}
+                      </h3>
+                      <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
+                        {playlist.description}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {playlist.tracks} tracks
+                      </p>
                     </div>
-
-                    {/* Experience Info */}
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium truncate group-hover:text-[hsl(var(--terminal-green))] transition-colors">
-                        {exp.title}
-                      </div>
-                      <div className="text-sm text-muted-foreground truncate">
-                        {exp.company} • {exp.description}
-                      </div>
-                    </div>
-
-                    {/* Period */}
-                    <div className="text-sm text-muted-foreground hidden lg:block">
-                      {exp.period}
-                    </div>
-
-                    {/* Duration */}
-                    <div className="text-sm text-muted-foreground w-20 text-right">
-                      {exp.duration}
-                    </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>

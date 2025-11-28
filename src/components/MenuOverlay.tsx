@@ -11,7 +11,8 @@ const menuItems = [
   { number: "01", label: "HOME", path: "/" },
   { number: "02", label: "PROJECTS", path: "/work" },
   { number: "03", label: "ABOUT", path: "/about" },
-  { number: "04", label: "CONTACT", path: "/contact" },
+  { number: "04", label: "TIMELINE", path: "/timeline" },
+  { number: "05", label: "CONTACT", path: "/contact" },
 ];
 
 const MenuOverlay = ({ isOpen, onClose }: MenuOverlayProps) => {
