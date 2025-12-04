@@ -81,7 +81,7 @@ const About = () => {
                 <div className="flex flex-wrap items-center gap-4 mt-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Mail className="w-4 h-4" />
-                    <span className="font-mono text-xs">sandip@example.com</span>
+                    <span className="font-mono text-xs">bhandarisandip882@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <MapPin className="w-4 h-4" />
