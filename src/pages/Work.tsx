@@ -36,7 +36,7 @@ const Work = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-border">
+          <div className="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5 pb-4">
               {projects.map((project, index) => (
                 <div
