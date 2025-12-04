@@ -60,7 +60,7 @@ const About = () => {
               <div className="relative flex-shrink-0">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[hsl(var(--terminal-green))] to-[hsl(var(--terminal-purple))] opacity-60 blur-sm animate-pulse" />
                 <div className="relative w-28 h-28 rounded-2xl overflow-hidden border-2 border-[hsl(var(--terminal-green))]">
-                  <img alt="Sandip Bhandari" className="w-full h-full object-cover" src="/lovable-uploads/d446835f-0402-46b4-9e83-2f62ad4eb1b6.jpg" />
+                  
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[hsl(var(--terminal-green))] rounded-full flex items-center justify-center border-2 border-background">
                   <div className="w-2 h-2 bg-background rounded-full" />
